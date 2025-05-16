@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --c-color:#00008B;
+}
+.headerContent{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    /* transform: translate(0,80px); */
+    padding: 10px 50px 0 50px;
+    margin-top: 50px;
+    line-height: 70px;
+}
+
+.headerContent h1:nth-child(2){
+    font-size: 3rem;
+}
+
+.headerContent h1 + p{
+  display: flex;
+  gap: 20px;
+}
+.icon-wrapper {
+    background-color: #3b82f6; /* Blue background */
+    color: white;              /* Icon color */
+    padding: 12px;             /* Space around icon */
+    border-radius: 50%;        /* Makes it round */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .icon {
+    font-size: 20px;
+  }
+  
+  .job_icon {
+    color: var(--c-color);
+    font-size: 20px;
+    margin-right: 8px;
+  }
+  
+  .category_item{
+    color: var(--c-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px;
+    border-radius: 15px;
+    height: 60px;
+  }
+
+  .category{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .category_item{
+    margin-top: 30px;
+  }
+
+  @media (max-width:750px){
+  .category{
+    display: none;
+  }
+}
+
+@media (max-width:450px){
+  .headerContent{
+    padding: 0;
+  }
+  .headerContent h1 + p{
+    display: none;
+  }
+
+}
+
+
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.job-form {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+}
+
+.job-form input,
+.job-form select {
+  padding: 0.75rem 1rem;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+}
+
+.job-form input[type="submit"] {
+  background-color: #1d4ed8;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem;
+  border: none;
+  cursor: pointer;
+}
+
+.job-form input[type="submit"]:hover {
+  background-color: #1e40af;
+}
+
+@media (min-width: 640px) {
+  .job-form {
+    flex-direction: row;
+  }
+
+  .job-form input,
+  .job-form select {
+    width: auto;
+    border-bottom: none;
+    border-right: 1px solid #eee;
+  }
+
+  .job-form input[type="search"] {
+    flex: 1;
+  }
+
+  .job-form input[type="submit"] {
+    border-right: none;
+  }
+}
+
+

@@ -1,0 +1,108 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --c-color:#00008b;
+}
+.mobile_menubar{
+    height: 100vh;
+    background-color: var(--c-color);
+    background-image: url(../assets/girl_bg.jfif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.mobile_menubar nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.main_nav{
+    color: white;
+}
+
+.mobile_search form{
+    display: flex;
+    align-items: center;
+}
+.mobile_search form label{
+    position: absolute;
+}
+.mobile_search img{
+    width: 30px;
+}
+.mobile_search form input{
+    height: 35px;
+    width: 100%;
+    border: 4px solid rgba(255, 0, 0 , 0.1);
+    border-radius: 10px;
+}
+
+.mobile_search form input::placeholder{
+    padding: 30px;
+}
+
+
+@media (max-width:768px){
+    .options{
+        background-color: white;
+        color: #00008b;
+        top: 12%;
+    }
+
+    .main_nav{
+        position: absolute;
+        background-color: white;
+        color: var(--c-color);
+    }
+
+    .main_nav ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main_nav li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .main_nav li img {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+      }
+      
+}
+
+@media (min-width:460px) and (max-width:768px){
+.mobile_search form input{
+    width: 300px;
+}
+}
+
+@media (max-width:430px){
+    .mobile_menubar{
+        height: calc(90vh);
+    }
+}
+
+@media (max-width:380px){
+    .mobile_menubar{
+        height: calc(90vh);
+    }
+}
+
+@media (max-width:350px) {
+    .mobile_menubar{
+        height: calc(100vh + 100px);
+    }
+}
