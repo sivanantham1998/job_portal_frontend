@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./job_container.css";
 import check from "../assets/check_solid.svg";
 export default function Job_container() {
@@ -86,7 +86,16 @@ export default function Job_container() {
   ];
 
   const [showAll, setShowAll] = useState(false);
-  const visibleJobs = showAll ? jobs : jobs.slice(0, 4);
+  const [visibleJobs, setVisibleJobs] = useState([]);
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    const toShow = showAll ? jobs : jobs.slice(0, 4);
+    setVisibleJobs(toShow);
+
+    // Delay animation trigger
+    setTimeout(() => setAnimate(true), 100);
+  }, [showAll]);
   return (
     <>
       <div className="latest_job">
@@ -94,7 +103,7 @@ export default function Job_container() {
       </div>
       <div className="job_category">
         {visibleJobs.map((item, index) => (
-          <div className="jobs" key={index}>
+          <div className={`jobs ${animate ? "show" : ""}`} key={index}>
             <div className="job_top">
               <p>{item.job_type.toUpperCase()}</p>
               <img src={check} alt="check" />
@@ -115,7 +124,14 @@ export default function Job_container() {
       </div>
       {!showAll && (
         <div className="job_browse">
-          <button onClick={() => setShowAll(true)}>BROWSE ALL JOBS</button>
+          <button
+            onClick={() => {
+              setShowAll(true);
+              setAnimate(false);
+            }}
+          >
+            BROWSE ALL JOBS
+          </button>
         </div>
       )}
     </>
