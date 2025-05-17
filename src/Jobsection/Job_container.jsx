@@ -86,7 +86,7 @@ export default function Job_container() {
   ];
 
   const [showAll, setShowAll] = useState(false);
-  const visibleJobs = showAll ? jobs : jobs.slice(0, 5);
+  const visibleJobs = showAll ? jobs : jobs.slice(0, 4);
   return (
     <>
       <div className="latest_job">
