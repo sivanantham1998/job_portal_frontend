@@ -12,6 +12,7 @@ export default function HomePage() {
   return (
     <div>
       {isMobile ? <MobileHeader /> : <HeaderMain />}
+
       <Job_container />
       <ExploreMain />
       <FooterMain />
