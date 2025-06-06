@@ -1,5 +1,10 @@
 import React from "react";
+import Menubar from "../Menubar/Menubar";
 
 export default function Dashboard() {
-  return <div>Dashboard</div>;
+  return (
+    <div>
+      <Menubar />
+    </div>
+  );
 }

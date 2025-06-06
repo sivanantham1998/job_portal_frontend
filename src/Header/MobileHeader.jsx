@@ -13,6 +13,7 @@ import job_applied from "../assets/laptop_mobile.png";
 import logout from "../assets/logout_mobile.png";
 import search_mobile from "../assets/search_mobile.png";
 import { MainContent } from "./MainContent";
+import { Link } from "react-router-dom";
 export const MobileHeader = () => {
   let navLinks = [
     { logo: home, title: "Home" },
@@ -21,7 +22,7 @@ export const MobileHeader = () => {
     { logo: call, title: "Contact" },
   ];
   let options = [
-    { logo: dashboard, title: "Dashboard" },
+    { logo: dashboard, title: "Dashboard", path: "/dashboard" },
     { logo: profile, title: "Profile" },
     { logo: view_profile, title: "View Profile" },
     { logo: job_applied, title: "Job Applied" },
@@ -81,7 +82,9 @@ export const MobileHeader = () => {
               <ul className="multiple_options">
                 {options.map((item, index) => (
                   <li key={index}>
-                    <img src={item.logo} alt="" /> &nbsp; {item.title}
+                    <Link to={item.path}>
+                      <img src={item.logo} alt="" /> &nbsp; {item.title}
+                    </Link>
                   </li>
                 ))}
               </ul>

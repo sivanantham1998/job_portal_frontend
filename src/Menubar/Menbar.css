@@ -1,0 +1,11 @@
+@media (max-width:768px) {
+    .main_nav ul{
+        display: none;
+    }
+
+
+}
+
+    .main_nav li{
+        color: black;
+    }
