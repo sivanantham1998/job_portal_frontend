@@ -45,6 +45,11 @@ li
     gap: 20px;
     align-items: center;
 }
+
+.login p{
+  color: white;
+  text-decoration: none;
+}
 .account_details .account img{
     /* box-shadow: 0px 0px 5px blue; */
     filter: drop-shadow(0px 0px 4px #00008b);

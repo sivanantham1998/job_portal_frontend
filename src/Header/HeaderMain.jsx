@@ -11,6 +11,7 @@ import view_profile from "../assets/id_card.png";
 import job_applied from "../assets/laptop.png";
 import logout from "../assets/logout.png";
 import { MainContent } from "./MainContent";
+import { Link } from "react-router-dom";
 export default function HeaderMain() {
   let [toggle, setToggle] = useState(false);
 
@@ -28,7 +29,10 @@ export default function HeaderMain() {
     { logo: job_applied, title: "Job Applied" },
     { logo: logout, title: "Loguot" },
   ];
-  let authendicate = ["Sign In", "Resigter"];
+  let authendicate = [
+    { text: "Sign In", path: "userauthendicate" },
+    { text: "Register", path: "" },
+  ];
   return (
     <div className="headerMain">
       <header>
@@ -48,7 +52,9 @@ export default function HeaderMain() {
         <nav className="authendicate">
           <div className="login">
             {authendicate.map((item, index) => (
-              <p key={index}>{item}</p>
+              <Link to={item.path}>
+                <p key={index}>{item.text}</p>
+              </Link>
             ))}
           </div>
           <div className="account_details">
