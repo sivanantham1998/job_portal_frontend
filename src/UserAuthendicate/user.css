@@ -16,3 +16,25 @@
 .username img{
     width: 20px;
 }
+
+form:nth-child(1){
+    display: flex;
+    justify-content: center;
+}
+.username{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.username section{
+    display: flex;
+}
+
+.username section input{
+    width: 250px;
+    height: 30px;
+}

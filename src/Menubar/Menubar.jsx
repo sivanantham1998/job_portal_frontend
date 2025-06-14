@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Menbar.css";
 import home from "../assets/home.png";
 import work from "../assets/work.png";
@@ -10,9 +10,10 @@ import profile from "../assets/person.png";
 import view_profile from "../assets/id_card.png";
 import job_applied from "../assets/laptop.png";
 import logout from "../assets/logout.png";
+import Cookies from "js-cookie";
 export default function Menubar() {
   let [toggle, setToggle] = useState(false);
-
+  let [email, setEmail] = useState("");
   let navLinks = [
     { logo: home, title: "Home" },
     { logo: work, title: "Jobs" },
@@ -29,8 +30,9 @@ export default function Menubar() {
   ];
   let authendicate = ["Sign In", "Resigter"];
 
-  document.cookie =
-    "username=sivanantham; path=/; expires=Fri, 31 Dec 2025 23:59:59 GMT";
+  useEffect(() => {
+    setEmail(sessionStorage.getItem("email"));
+  }, []);
 
   return (
     <>
@@ -50,9 +52,11 @@ export default function Menubar() {
         </nav>
         <nav className="authendicate">
           <div className="login">
-            {authendicate.map((item, index) => (
-              <p key={index}>{item}</p>
-            ))}
+            {email === true ? (
+              authendicate.map((item, index) => <p key={index}>{item}</p>)
+            ) : (
+              <h3>{email}</h3>
+            )}
           </div>
           <div className="account_details">
             <div className="account" onClick={() => setToggle(!toggle)}>
@@ -74,6 +78,16 @@ export default function Menubar() {
           </div>
         </nav>
       </header>
+      <button
+        onClick={() => {
+          sessionStorage.removeItem("email");
+          sessionStorage.removeItem("userId");
+          Cookies.remove("email");
+          Cookies.remove("userId");
+        }}
+      >
+        logout
+      </button>
     </>
   );
 }
